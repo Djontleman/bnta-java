@@ -20,28 +20,46 @@ public class Exercise4 {
 
         // for array2
 
-        String[] longestStringArray = new String[array2.length];
-        longestStringArray[0] = "";
-        // attempt 1
-//        for (int i = 0; i > array2.length; i++) {
-//            if (array2[i].length() > longestStringArray[i].length()) {
-//                longestStringArray[i] = array2[i];
-//            }
-//        }
+        // Setup
+        if (array2.length < 1) {
+            String[] longestStringArray = new String[1];
+            System.out.println("");
+        } else {
+            String[] longestStringArray = new String[array2.length];
 
-        // attempt 2
-        int i = 0;
-        for (String element: array2) {
-            if (element.length() > longestStringArray[i].length()) {
-                longestStringArray[i] = element;
-            }
-        }
+            longestStringArray[0] = "";
 
-        for (String element: longestStringArray) {
-            if (element == null) {
-                continue;
+            // Find longest string(s) and put them into array
+            int i = 0;
+            for (String element : array2) {
+                if (element.length() > longestStringArray[i].length()) {
+                    i = 0;
+                    longestStringArray[i] = element;
+                } else if (element.length() == longestStringArray[i].length()) {
+                    i++;
+                    longestStringArray[i] = element;
+                }
             }
-            System.out.print(element + " ");
+
+            // Remove duplicates
+            for (int j = 0; j < longestStringArray.length; j++) {
+                for (int k = 0; k < longestStringArray.length; k++) {
+                    if (j == k || longestStringArray[j] == null || longestStringArray[k] == null) {
+                        continue;
+                    }
+                    if (longestStringArray[j].equals(longestStringArray[k])) {
+                        longestStringArray[k] = null;
+                    }
+                }
+            }
+
+            // Print longest string(s)
+            for (String element : longestStringArray) {
+                if (element == null) {
+                    continue;
+                }
+                System.out.print(element + " ");
+            }
         }
     }
 }
