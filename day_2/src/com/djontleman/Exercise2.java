@@ -1,5 +1,7 @@
 package com.djontleman;
 
+import java.math.BigDecimal;
+
 public class Exercise2 {
 
     public static void main(String[] args) {
@@ -18,19 +20,19 @@ public class Exercise2 {
         System.out.println();
 
         // Convert array of strings to array of doubles
-        double[] pricesArray = new double[pricesStringsArray.length];
+        BigDecimal[] pricesArray = new BigDecimal[pricesStringsArray.length];
         for (int i = 0; i < pricesArray.length; i++) {
-            pricesArray[i] = Double.valueOf(pricesStringsArray[i]);
+            pricesArray[i] = new BigDecimal(pricesStringsArray[i]);
         }
-        for (double price: pricesArray) {
+        for (BigDecimal price: pricesArray) {
             System.out.print(price + " ");
         }
         System.out.println();
 
         // Add the array elements and print the sum
-        double sum = 0;
-        for (double price: pricesArray) {
-            sum += price;
+        BigDecimal sum = new BigDecimal("0.00");
+        for (BigDecimal price: pricesArray) {
+            sum = sum.add(price);
         }
         System.out.print("The total amount is " + sum);
     }
