@@ -21,18 +21,21 @@ public class Exercise4 {
         // for array2
 
         // Setup
-        if (array2.length < 1) {
+        if (array4.length < 1) {
             String[] longestStringArray = new String[1];
             System.out.println("");
         } else {
-            String[] longestStringArray = new String[array2.length];
+            String[] longestStringArray = new String[array4.length];
 
             longestStringArray[0] = "";
 
             // Find longest string(s) and put them into array
             int i = 0;
-            for (String element : array2) {
+            for (String element : array4) {
                 if (element.length() > longestStringArray[i].length()) {
+                    for (String elementInLongest: longestStringArray) {
+                        elementInLongest = null;
+                    }
                     i = 0;
                     longestStringArray[i] = element;
                 } else if (element.length() == longestStringArray[i].length()) {
