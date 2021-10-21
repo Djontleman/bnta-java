@@ -67,8 +67,12 @@ public class Main {
         String email4 = "random@gmail";
         String email5 = "random.email";
         String email6 = "random@gmail@.com";
+        String email7 = "@random.com";
+        String email8 = "random@gmail.";
+        String email9 = "random@.gmail";
+        String email10= "random@gmail..com";
 
         EmailValidator emailValidator = new EmailValidator();
-        System.out.println(emailValidator.runLoops(email6));
+        System.out.println(emailValidator.runLoops(email10));
     }
 }
