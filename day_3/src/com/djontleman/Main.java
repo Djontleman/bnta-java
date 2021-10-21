@@ -37,22 +37,20 @@ public class Main {
         Car car2 = new Car("vauxhall", "astra", "2003", Status.BROKEN);
         Car car3 = new Car("citroen", "picasso", "2005", Status.BROKEN);
         Car car4 = new Car("mercedes", "c-class", "2010", Status.BROKEN);
-//        System.out.println(car1.getStatus());
-//        System.out.println(car2.toString());
+
 
         Garage garage = new Garage(25);
-        System.out.println(garage.toString());
 
         GarageService garageService = new GarageService();
 
+        garageService.listCars(garage);
+
         garageService.addCar(garage, car1);
-        System.out.println(garage.toString());
-
         garageService.addCar(garage, car2);
-        System.out.println(garage.toString());
+        garageService.listCars(garage);
 
-        garageService.removeCar(garage, car1);
-        System.out.println(garage.toString());
+//        garageService.removeCar(garage, car1);
+
 
 
     }

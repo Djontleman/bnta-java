@@ -4,6 +4,23 @@ import java.util.Scanner;
 
 public class GarageService {
 
+    public int listCars(Garage garage){
+        System.out.println("All cars in garage:");
+        if (garage.getCount() == 0) {
+            System.out.println("None");
+            return 0;
+        }
+        for (Car car: garage.getCarList()) {
+            if (car!=null) {
+                System.out.println(
+                        "Car: " + car.getMake() + " " + car.getModel() + ", " + car.getYear() + " " +
+                        "Status: " + car.getStatus()
+                );
+            }
+        }
+        return 1;
+    }
+
     public int addCar(Garage garage, Car car) {
         if (garage.getCount() + 1 > garage.getCapacity()) {
             System.out.println("Garage is full");
