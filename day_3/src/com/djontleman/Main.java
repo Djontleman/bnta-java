@@ -47,11 +47,12 @@ public class Main {
 
         garageService.addCar(garage, car1);
         garageService.addCar(garage, car2);
+
+        garageService.carFixed(garage, car2);
+        garageService.carFixed(garage, car3);
         garageService.listCars(garage);
 
-//        garageService.removeCar(garage, car1);
-
-
-
+        garageService.removeCar(garage, car2);
+        garageService.listCars(garage);
     }
 }

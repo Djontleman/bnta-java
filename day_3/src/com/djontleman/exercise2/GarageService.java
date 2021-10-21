@@ -1,5 +1,6 @@
 package com.djontleman.exercise2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class GarageService {
@@ -69,6 +70,17 @@ public class GarageService {
             }
         }
         return 0;
+    }
+
+    public int carFixed(Garage garage, Car car) {
+        if (Arrays.asList(garage.getCarList()).contains(car)) {
+            car.setStatus(Status.FIXED);
+            System.out.println("Status changed to: Fixed");
+            return 1;
+        } else {
+            System.out.println("Error: Car is not in garage");
+            return 0;
+        }
     }
 }
 
