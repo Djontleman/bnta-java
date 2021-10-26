@@ -21,7 +21,7 @@ public class UserDatabaseService {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                if (line.contains("id,first_name,last_name,email,gender")) {
+                if (line.length() == 0 || !isNumeric(Character.toString(line.charAt(0)))) {
                     continue;
                 }
 
