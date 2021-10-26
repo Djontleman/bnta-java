@@ -1,5 +1,8 @@
 package com.djontleman;
 
+import com.djontleman.person.Gender;
+import com.djontleman.person.Person;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;

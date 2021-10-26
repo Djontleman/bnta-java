@@ -1,4 +1,4 @@
-package com.djontleman;
+package com.djontleman.person;
 
 public enum Gender {
 
