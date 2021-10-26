@@ -1,7 +1,8 @@
-package com.djontleman;
+package com.djontleman.userdatabase;
 
 import com.djontleman.person.Gender;
 import com.djontleman.person.Person;
+import com.djontleman.userdatabase.UserDatabase;
 
 import java.io.File;
 import java.io.FileNotFoundException;

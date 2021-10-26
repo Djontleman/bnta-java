@@ -1,4 +1,4 @@
-package com.djontleman;
+package com.djontleman.userdatabase;
 
 import com.djontleman.person.Person;
 
