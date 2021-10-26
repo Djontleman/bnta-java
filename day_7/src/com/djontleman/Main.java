@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
 //        useUserDatabase();
-        useUserFileDataAccessService();
+//        useUserFileDataAccessService();
+        useUserService();
     }
 
     private static void useUserDatabase() {
@@ -23,5 +24,11 @@ public class Main {
     private static void useUserFileDataAccessService() {
         UserFileDataAccessService userFileDataAccessService = new UserFileDataAccessService();
         System.out.println(userFileDataAccessService.getUsers());
+    }
+
+    private static void useUserService() {
+        UserFileDataAccessService userFileDataAccessService = new UserFileDataAccessService();
+        UserService userService = new UserService(userFileDataAccessService);
+        System.out.println(userService.getUsers());
     }
 }
