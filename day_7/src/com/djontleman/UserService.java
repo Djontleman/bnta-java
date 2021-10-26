@@ -1,6 +1,6 @@
 package com.djontleman;
 
-import com.djontleman.person.Person;
+import com.djontleman.user.User;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
-    public List<Person> getUsers() {
+    public List<User> getUsers() {
         return this.userDAO.getUsers();
     }
 }

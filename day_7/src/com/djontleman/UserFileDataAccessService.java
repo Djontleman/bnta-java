@@ -1,7 +1,7 @@
 package com.djontleman;
 
-import com.djontleman.person.Gender;
-import com.djontleman.person.Person;
+import com.djontleman.user.Gender;
+import com.djontleman.user.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class UserFileDataAccessService implements UserDAO{
 
     @Override
-    public List<Person> getUsers() {
-        List<Person> users = new ArrayList<>();
+    public List<User> getUsers() {
+        List<User> users = new ArrayList<>();
 
         try {
             File file = new File("src/data.txt");
@@ -27,7 +27,7 @@ public class UserFileDataAccessService implements UserDAO{
 
                 String[] modifiedLine = line.split(",");
 
-                Person user = new Person(modifiedLine[0], modifiedLine[1], modifiedLine[2], modifiedLine[3], Gender.valueOf(modifiedLine[4]));
+                User user = new User(modifiedLine[0], modifiedLine[1], modifiedLine[2], modifiedLine[3], Gender.valueOf(modifiedLine[4]));
                 users.add(user);
 //                System.out.println(users);
             }

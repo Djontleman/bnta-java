@@ -1,8 +1,7 @@
 package com.djontleman.userdatabase;
 
-import com.djontleman.person.Gender;
-import com.djontleman.person.Person;
-import com.djontleman.userdatabase.UserDatabase;
+import com.djontleman.user.Gender;
+import com.djontleman.user.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,7 +12,7 @@ public class UserDatabaseService {
 
     public int getDatabaseFromFile(String fileName, UserDatabase userDatabase) {
 
-        List<Person> users = userDatabase.getUsers();
+        List<User> users = userDatabase.getUsers();
 
         try {
             File file = new File(fileName);
@@ -27,7 +26,7 @@ public class UserDatabaseService {
 
                 String[] modifiedLine = line.split(",");
 
-                Person user = new Person(modifiedLine[0], modifiedLine[1], modifiedLine[2], modifiedLine[3], Gender.valueOf(modifiedLine[4]));
+                User user = new User(modifiedLine[0], modifiedLine[1], modifiedLine[2], modifiedLine[3], Gender.valueOf(modifiedLine[4]));
                 users.add(user);
 //                System.out.println(users);
             }

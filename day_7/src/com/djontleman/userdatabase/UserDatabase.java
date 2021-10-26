@@ -1,6 +1,6 @@
 package com.djontleman.userdatabase;
 
-import com.djontleman.person.Person;
+import com.djontleman.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,17 +8,17 @@ import java.util.Objects;
 
 public class UserDatabase {
 
-    private List<Person> users;
+    private List<User> users;
 
     public UserDatabase() {
         this.users = new ArrayList<>();
     }
 
-    public List<Person> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<Person> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 

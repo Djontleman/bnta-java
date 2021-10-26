@@ -1,8 +1,8 @@
-package com.djontleman.person;
+package com.djontleman.user;
 
 import java.util.Objects;
 
-public class Person {
+public class User {
 
     private String id;
     private String firstName;
@@ -10,9 +10,9 @@ public class Person {
     private String email;
     private Gender gender;
 
-    public Person() {}
+    public User() {}
 
-    public Person(String id, String firstName, String lastName, String email, Gender gender) {
+    public User(String id, String firstName, String lastName, String email, Gender gender) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,8 +75,8 @@ public class Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(id, person.id) && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email) && gender == person.gender;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email) && gender == user.gender;
     }
 
     @Override
