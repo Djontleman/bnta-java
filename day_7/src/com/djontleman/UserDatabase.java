@@ -1,29 +1,30 @@
 package com.djontleman;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class UserDatabase {
 
-    private Person[] users;
+    private List<Person> users;
 
-    public UserDatabase() {};
-
-    public UserDatabase(Person[] users) {
-        this.users = users;
+    public UserDatabase() {
+        this.users = new ArrayList<>();
     }
 
-    public Person[] getUsers() {
+    public List<Person> getUsers() {
         return users;
     }
 
-    public void setUsers(Person[] users) {
+    public void setUsers(List<Person> users) {
         this.users = users;
     }
 
     @Override
     public String toString() {
         return "UserDatabase{" +
-                "users=" + Arrays.toString(users) +
+                "users=" + users +
                 '}';
     }
 
@@ -32,11 +33,12 @@ public class UserDatabase {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserDatabase that = (UserDatabase) o;
-        return Arrays.equals(users, that.users);
+        return Objects.equals(users, that.users);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(users);
+        return Objects.hash(users);
     }
 }
+
