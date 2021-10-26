@@ -6,9 +6,9 @@ public class Main {
 	// write your code here
 
         UserDatabase userDatabase = new UserDatabase();
-        UserFileDataAccessService userFileDataAccessService = new UserFileDataAccessService();
+        UserDatabaseService userDatabaseService = new UserDatabaseService();
 
-        userFileDataAccessService.getDatabaseFromFile("src/data.txt", userDatabase);
+        userDatabaseService.getDatabaseFromFile("src/data.txt", userDatabase);
 
         System.out.println(userDatabase);
     }

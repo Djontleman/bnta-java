@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserFileDataAccessService {
+public class UserDatabaseService {
 
     public int getDatabaseFromFile(String fileName, UserDatabase userDatabase) {
 
