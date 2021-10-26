@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Person {
 
+    private String id;
     private String firstName;
     private String lastName;
     private String email;
@@ -11,11 +12,20 @@ public class Person {
 
     public Person() {}
 
-    public Person(String firstName, String lastName, String email, Gender gender) {
+    public Person(String id, String firstName, String lastName, String email, Gender gender) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -53,7 +63,8 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "firstName='" + firstName + '\'' +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", gender=" + gender +
@@ -65,11 +76,11 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email) && gender == person.gender;
+        return Objects.equals(id, person.id) && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email) && gender == person.gender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, email, gender);
+        return Objects.hash(id, firstName, lastName, email, gender);
     }
 }
