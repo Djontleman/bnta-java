@@ -11,8 +11,9 @@ public class Exercise2Main {
         String testString3 = "()";
         String testString4 = "({( })";
         String testString5 = "({()}";
+        String testString6 = "";
 
-        System.out.println(bracketChecker(testString5));
+        System.out.println(bracketChecker(testString6));
     }
 
     public static boolean bracketChecker(String string) {
@@ -36,11 +37,10 @@ public class Exercise2Main {
                     return false;
                 }
             }
-            if (stack.capacity() == 1 && i == stringList.length - 1) {
+            if (stack.size() == 1 && i == stringList.length - 1) {
                 return false;
             }
-
-            System.out.println(stack);
+//            System.out.println(stack);
         }
         return true;
     }
