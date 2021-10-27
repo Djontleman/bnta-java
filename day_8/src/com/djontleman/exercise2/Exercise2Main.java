@@ -21,25 +21,26 @@ public class Exercise2Main {
 
         String[] stringList = string.split("");
 
-        for (String element : stringList) {
-            if (element.equals("(") ||
-                    element.equals("{") ||
-                    element.equals("[")) {
-                stack.add(element);
-            } else if (element.equals(")") ||
-                    element.equals("}") ||
-                    element.equals("]")) {
-                String test = stack.peek() + element;
+        for (int i = 0; i < stringList.length; i++) {
+            if (stringList[i].equals("(") ||
+                    stringList[i].equals("{") ||
+                    stringList[i].equals("[")) {
+                stack.add(stringList[i]);
+            } else if (stringList[i].equals(")") ||
+                    stringList[i].equals("}") ||
+                    stringList[i].equals("]")) {
+                String test = stack.peek() + stringList[i];
                 if (test.equals("()") || test.equals("{}") || test.equals("[]")) {
                     stack.pop();
                 } else {
                     return false;
                 }
-            } else {
-                if (stack) {
-                    return false;
-                }
             }
+            if (stack.capacity() == 1 && i == stringList.length - 1) {
+                return false;
+            }
+
+            System.out.println(stack);
         }
         return true;
     }
