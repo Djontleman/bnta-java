@@ -13,7 +13,7 @@ public class Exercise2Main {
         String testString5 = "({()}";
         String testString6 = "";
 
-        System.out.println(bracketChecker(testString6));
+        System.out.println(bracketChecker(testString1));
     }
 
     public static boolean bracketChecker(String string) {
@@ -39,9 +39,6 @@ public class Exercise2Main {
             }
 //            System.out.println(stack);
         }
-        if (stack.size() > 0) {
-            return false;
-        }
-        return true;
+        return stack.empty();
     }
 }
