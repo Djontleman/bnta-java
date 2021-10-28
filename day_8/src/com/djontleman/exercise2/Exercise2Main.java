@@ -37,10 +37,13 @@ public class Exercise2Main {
                     return false;
                 }
             }
-            if (stack.size() == 1 && i == stringList.length - 1) {
-                return false;
-            }
+//            if (stack.size() > 0 && i == stringList.length - 1) {
+//                return false;
+
 //            System.out.println(stack);
+        }
+        if (stack.size() > 0) {
+            return false;
         }
         return true;
     }
